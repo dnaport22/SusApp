@@ -10,7 +10,13 @@ elephant.controller('MainpageCtrl', function($state, $ionicHistory, $scope, $htt
   /**
    * Home page view list & grid
    */
-  $scope.viewType = 'list';
+  var screenSize = $(window).width();
+  if(screenSize > 800){
+    $scope.viewType = 'grid';
+  }else{
+    $scope.viewType = 'list';
+  }
+  
   $scope.changeToGrid = function(type) {
     if(type == 'list') {
       $scope.viewType = 'grid';
