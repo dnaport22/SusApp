@@ -94,6 +94,8 @@ elephant.controller('PostitemController', function($state, $scope, $ionicHistory
           //Ionic analytics below
           $ionicAnalytics.track('Posted Item', {item_name: itemName, post_user_activation: $localStorage.user_activation})
           reloadForm();
+          $state.go("app.main");
+          $ionicSideMenuDelegate.toggleLeft();
         }, function(err) {
           UIfactory.hideSpinner();
           UIfactory.showAlert('Error', PostitemNotification.UPLOAD_ERROR);
