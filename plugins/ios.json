@@ -33,6 +33,10 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.elephant.app"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "40453174978",
+            "PACKAGE_NAME": "com.elephant.app"
         }
     },
     "dependent_plugins": {

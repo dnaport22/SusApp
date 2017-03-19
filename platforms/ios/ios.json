@@ -51,6 +51,10 @@
                         {
                             "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"PushNotification\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -60,6 +64,24 @@
                     "NSLocationWhenInUseUsageDescription": [
                         {
                             "xml": "<string />",
+                            "count": 1
+                        }
+                    ],
+                    "UIBackgroundModes": [
+                        {
+                            "xml": "<array><string>remote-notification</string></array>",
+                            "count": 1
+                        }
+                    ],
+                    "GCM_SENDER_ID": [
+                        {
+                            "xml": "<string>40453174978</string>",
+                            "count": 1
+                        }
+                    ],
+                    "IS_GCM_ENABLED": [
+                        {
+                            "xml": "<true />",
                             "count": 1
                         }
                     ]
@@ -96,6 +118,10 @@
             "PACKAGE_NAME": "com.elephant.app"
         },
         "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.elephant.app"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "40453174978",
             "PACKAGE_NAME": "com.elephant.app"
         }
     },
@@ -362,6 +388,14 @@
                 "cordova.plugins.Keyboard"
             ],
             "runs": true
+        },
+        {
+            "id": "phonegap-plugin-push.PushNotification",
+            "file": "plugins/phonegap-plugin-push/www/push.js",
+            "pluginId": "phonegap-plugin-push",
+            "clobbers": [
+                "PushNotification"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -374,6 +408,7 @@
         "cordova-plugin-whitelist": "1.2.2",
         "ionic-plugin-deploy": "0.6.0",
         "ionic-plugin-keyboard": "2.2.1",
-        "cordova-plugin-compat": "1.0.0"
+        "cordova-plugin-compat": "1.0.0",
+        "phonegap-plugin-push": "1.8.4"
     }
 }

@@ -7,7 +7,8 @@ elephant.controller('DrawerController', function($state, $scope, $location, $loc
     user_activation: null,
     user_email: null,
     expiry: 0,
-    app_launch_activity: 0
+    app_launch_activity: 0,
+    registrationID: null,
   });
 
   $scope.drawerLinks_loggedOut = [

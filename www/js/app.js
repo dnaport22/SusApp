@@ -8,8 +8,32 @@ var elephant = angular.module('elephant',
   'ionic.service.analytics'
 ])
 
-.run(function($ionicPlatform, $ionicAnalytics) {
+.run(function($ionicPlatform, $ionicAnalytics, $cordovaPushV5, $localStorage) {
   $ionicPlatform.ready(function() {
+
+    var options = {
+      android: {
+        senderID: "40453174978"
+      },
+      ios: {
+        alert: "true",
+        badge: "true",
+        sound: "true"
+      }
+    };
+
+    $cordovaPushV5.initialize(options).then(function() {
+      // start listening for new notifications
+      $cordovaPushV5.onNotification();
+      // start listening for errors
+      $cordovaPushV5.onError();
+
+      // register to get registrationId
+      $cordovaPushV5.register().then(function(registrationId) {
+        $localStorage.registrationID = registrationId;
+      })
+    });
+
     //Register ionic analytics
     $ionicAnalytics.register();
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

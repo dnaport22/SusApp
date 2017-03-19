@@ -54,7 +54,6 @@ elephant.controller('MainpageCtrl', function($state, $ionicHistory, $scope, $htt
   };
 
   $scope.processData = function(data) {
-    console.log(data)
     for (i = 0; i < data.length; i++) {
       data[i]['image_url'] = 'http://service.myelephant.xyz/images/'+data[i]['image']
       $scope.items = $scope.items.concat(data[i])

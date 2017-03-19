@@ -228,6 +228,13 @@ module.exports = [
         "clobbers": [
             "IonicDeploy"
         ]
+    },
+    {
+        "file": "plugins/phonegap-plugin-push/www/push.js",
+        "id": "phonegap-plugin-push.PushNotification",
+        "clobbers": [
+            "PushNotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -242,7 +249,8 @@ module.exports.metadata =
     "cordova-plugin-file": "4.2.0",
     "cordova-plugin-file-transfer": "1.5.1",
     "cordova-plugin-camera": "2.2.0",
-    "ionic-plugin-deploy": "0.6.0"
+    "ionic-plugin-deploy": "0.6.0",
+    "phonegap-plugin-push": "1.8.4"
 };
 // BOTTOM OF METADATA
 });
