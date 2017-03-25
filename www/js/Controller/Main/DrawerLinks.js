@@ -1,4 +1,4 @@
-elephant.controller('DrawerController', function($state, $scope, $location, $localStorage, UIfactory, $ionicPopover, $ionicHistory) {
+elephant.controller('DrawerController', function($state, $scope, $location, $localStorage, UIfactory, $ionicPopover, $ionicHistory, LocalNotification) {
 
   $scope.username = $localStorage.user_username;
   $scope.$storage = $localStorage.$default({
@@ -56,6 +56,7 @@ elephant.controller('DrawerController', function($state, $scope, $location, $loc
     }
   }
   loginexpiryCheck();
+  LocalNotification.scheduleNotification();
 
   $scope.goToPP = function() {
     $state.go('app.pp')
